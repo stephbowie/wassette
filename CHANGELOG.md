@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- CPU resource limits support for WebAssembly components using Wasmtime's fuel API
+  - Added `extract_cpu_limit` function to extract CPU limits from policy documents
+  - Added `cpu_limit` field to `WasiStateTemplate` for storing CPU limits in cores
+  - Added `grant-cpu-permission` CLI command and tool for granting CPU permissions to components
+  - Enabled fuel consumption in Wasmtime engine configuration for CPU limiting
+  - Support for both k8s-style format (e.g., "500m", "2") and legacy numeric format in policy files
+  - CPU limits are converted to fuel units and applied per component execution
 - AI agent development guides (`AGENTS.md` and `Claude.md`) that consolidate development guidelines from `.github/instructions/` into accessible documentation for AI agents working on the project
 - Comprehensive installation guide page consolidating all installation methods (one-liner script, Homebrew, Nix, WinGet) organized by platform (Linux, macOS, Windows) with verification steps and troubleshooting sections
 - Cookbook section in documentation with language-specific guides for building Wasm components in JavaScript/TypeScript, Python, Rust, and Go ([#328](https://github.com/microsoft/wassette/pull/328))
