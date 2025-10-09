@@ -7,12 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ### Added
 
 - CPU resource limits support for WebAssembly components using Wasmtime's fuel API
-  - Added `extract_cpu_limit` function to extract CPU limits from policy documents
-  - Added `cpu_limit` field to `WasiStateTemplate` for storing CPU limits in cores
-  - Added `grant-cpu-permission` CLI command and tool for granting CPU permissions to components
-  - Enabled fuel consumption in Wasmtime engine configuration for CPU limiting
-  - Support for both k8s-style format (e.g., "500m", "2") and legacy numeric format in policy files
-  - CPU limits are converted to fuel units and applied per component execution
+- `rust-toolchain.toml` file specifying Rust 1.90 as the stable toolchain version, ensuring consistent Rust version across development environments and CI/CD pipelines
 - AI agent development guides (`AGENTS.md` and `Claude.md`) that consolidate development guidelines from `.github/instructions/` into accessible documentation for AI agents working on the project
 - Comprehensive installation guide page consolidating all installation methods (one-liner script, Homebrew, Nix, WinGet) organized by platform (Linux, macOS, Windows) with verification steps and troubleshooting sections
 - Cookbook section in documentation with language-specific guides for building Wasm components in JavaScript/TypeScript, Python, Rust, and Go ([#328](https://github.com/microsoft/wassette/pull/328))
@@ -23,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Documentation for GitHub Agentic Workflows explaining how the repository uses @githubnext/gh-aw for automated issue triage and research tasks
 - Comprehensive documentation in RELEASE.md for releasing example component images to GHCR, including automatic publishing workflow, manual release process, and instructions for adding new examples
 - GitHub Actions workflow `.github/workflows/copilot-setup-steps.yml` that provides reusable setup steps for GitHub Copilot coding agents to prepare a complete development environment with Rust, just, protobuf, wasm-tools, and other essential tools
+- Added `rules/agent.md` instruction file for AI agents emphasizing use of `grant-xxx-permission` tools instead of manually editing policy files, with installation instructions in the installation guide
 
 ### Changed
 
