@@ -6,7 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
-- CPU resource limits support for WebAssembly components using Wasmtime's fuel API
+- CPU resource limits support for WebAssembly components using Wasmtime's fuel API and epoch interruption
+  - Added calibratable constants for fuel-to-instruction conversion (INSTRUCTIONS_PER_FUEL_UNIT, FUEL_TIME_SLICE_INSTRUCTIONS)
+  - CPU limits stored as millicores (integer math only) instead of floating-point cores
+  - Fuel allocated in time slices rather than all at once for better resource management
+  - Epoch interruption enabled for preemption during long-running host function calls
+  - Fuel only set when CPU limits exist (no u64::MAX for unlimited execution)
+  - Support for k8s-style CPU limit format ("500m" for millicores, "2" for cores)
 - Comprehensive Docker documentation and Dockerfile for running Wassette in containers with enhanced security isolation, including examples for mounting components, secrets, configuration files, and production deployment patterns with Docker Compose
 - `rust-toolchain.toml` file specifying Rust 1.90 as the stable toolchain version, ensuring consistent Rust version across development environments and CI/CD pipelines
 - AI agent development guides (`AGENTS.md` and `Claude.md`) that consolidate development guidelines from `.github/instructions/` into accessible documentation for AI agents working on the project
