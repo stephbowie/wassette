@@ -139,32 +139,7 @@ impl TryFrom<String> for ToolName {
 
 impl AsRef<str> for ToolName {
     fn as_ref(&self) -> &str {
-<<<<<<< HEAD
-        match self {
-            Self::LoadComponent => "load-component",
-            Self::UnloadComponent => "unload-component",
-            Self::ListComponents => "list-components",
-            Self::GetPolicy => "get-policy",
-            Self::GrantStoragePermission => "grant-storage-permission",
-            Self::GrantNetworkPermission => "grant-network-permission",
-            Self::GrantEnvironmentVariablePermission => "grant-environment-variable-permission",
-            Self::GrantMemoryPermission => "grant-memory-permission",
-            Self::GrantCpuPermission => "grant-cpu-permission",
-            Self::RevokeStoragePermission => "revoke-storage-permission",
-            Self::RevokeNetworkPermission => "revoke-network-permission",
-            Self::RevokeEnvironmentVariablePermission => "revoke-environment-variable-permission",
-            Self::ResetPermission => "reset-permission",
-        }
-    }
-}
-
-impl ToolName {
-    /// Get the tool name as a string (convenience method that delegates to AsRef)
-    fn as_str(&self) -> &str {
-        self.as_ref()
-=======
         self.as_str()
->>>>>>> origin/main
     }
 }
 
